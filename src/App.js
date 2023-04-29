@@ -9,18 +9,22 @@ function App() {
 
   useEffect(() => {
     async function fetchBreeds() {
-      setIsLoading(true);
       const response = await fetch('https://dog.ceo/api/breeds/list/all');
       const data = await response.json();
       setBreeds(Object.keys(data.message));
-      setIsLoading(false);
     }
 
     fetchBreeds();
   }, []);
 
-  const searchByBreed = () => {
-    // TODO
+  const searchByBreed = async () => {
+    setIsLoading(true);
+    const response = await fetch(
+      `https://dog.ceo/api/breed/${selectedBreed}/images`
+    );
+    const data = await response.json();
+    setDogImages(data.message);
+    setIsLoading(false);
   };
 
   return (
