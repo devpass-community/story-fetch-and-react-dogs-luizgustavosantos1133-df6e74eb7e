@@ -30,7 +30,7 @@ function App() {
   return (
     <div className='d-flex justify-content-center flex-column text-center'>
       <header>
-        <h1 className='mt-4 mb-5'>Pawspective 🐶</h1>
+        <h1 className='mt-4 mb-5'>Evercode Dogs</h1>
       </header>
       <main role='main'>
         <div className='d-flex justify-content-center'>
